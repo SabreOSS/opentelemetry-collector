@@ -65,6 +65,7 @@ func Command() (*cobra.Command, error) {
 	cmd.Flags().StringVar(&cfg.Distribution.OutputPath, "output-path", cfg.Distribution.OutputPath, "Where to write the resulting files")
 	cmd.Flags().StringVar(&cfg.Distribution.Go, "go", "", "The Go binary to use during the compilation phase. Default: go from the PATH")
 	cmd.Flags().StringVar(&cfg.Distribution.Module, "module", "go.opentelemetry.io/collector/cmd/builder", "The Go module for the new distribution")
+	cmd.Flags().BoolVar(&cfg.Distribution.Debug, "debug-compilation", false, "Compile with debug flags")
 
 	// version of this binary
 	cmd.AddCommand(versionCommand())
