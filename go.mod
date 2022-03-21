@@ -22,21 +22,21 @@ require (
 	github.com/stretchr/testify v1.7.0
 	go.opencensus.io v0.23.0
 	go.opentelemetry.io/collector/model v0.45.0
-	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.28.0
+	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.30.0
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.28.0
 	go.opentelemetry.io/contrib/zpages v0.28.0
-	go.opentelemetry.io/otel v1.4.0
+	go.opentelemetry.io/otel v1.5.0
 	go.opentelemetry.io/otel/exporters/prometheus v0.27.0
 	go.opentelemetry.io/otel/metric v0.27.0
 	go.opentelemetry.io/otel/sdk v1.4.0
 	go.opentelemetry.io/otel/sdk/metric v0.27.0
-	go.opentelemetry.io/otel/trace v1.4.0
+	go.opentelemetry.io/otel/trace v1.5.0
 	go.uber.org/atomic v1.9.0
 	go.uber.org/multierr v1.7.0
 	go.uber.org/zap v1.21.0
 	golang.org/x/sys v0.0.0-20220114195835-da31bd327af9
 	google.golang.org/genproto v0.0.0-20211208223120-3a66f561d7aa
-	google.golang.org/grpc v1.44.0
+	google.golang.org/grpc v1.45.0
 	google.golang.org/protobuf v1.27.1
 	gopkg.in/yaml.v2 v2.4.0
 )
