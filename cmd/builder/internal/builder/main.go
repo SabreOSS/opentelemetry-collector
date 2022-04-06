@@ -88,7 +88,7 @@ func Compile(cfg Config) error {
 	// #nosec G204
 	cmd := exec.Command(cfg.Distribution.Go, "build", "-ldflags=-s -w", "-trimpath", "-o", cfg.Distribution.Name)
 	if cfg.Distribution.Debug {
-		cmd = exec.Command(cfg.Distribution.Go, "build", "-ldflags=", "-gcflags=all=-N -l", "-trimpath", "-o", cfg.Distribution.Name)
+		cmd = exec.Command(cfg.Distribution.Go, "build", "-ldflags=", "-gcflags=all=-N -l", "-o", cfg.Distribution.Name)
 	}
 	cmd.Dir = cfg.Distribution.OutputPath
 	if out, err := cmd.CombinedOutput(); err != nil {
