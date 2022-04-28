@@ -53,6 +53,7 @@ type Distribution struct {
 	OtelColVersion string `mapstructure:"otelcol_version"`
 	OutputPath     string `mapstructure:"output_path"`
 	Version        string `mapstructure:"version"`
+	Debug          bool   `mapstructure:"debug_compilation"`
 }
 
 // Module represents a receiver, exporter, processor or extension for the distribution
