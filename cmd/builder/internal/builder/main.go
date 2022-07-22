@@ -87,6 +87,9 @@ func Compile(cfg Config) error {
 	cfg.Logger.Info("Compiling")
 
 	args := []string{"build", "-ldflags=-s -w", "-trimpath", "-o", cfg.Distribution.Name}
+	if cfg.Distribution.Debug {
+		args = []string{"build", "-ldflags=", "-gcflags=all=-N -l", "-trimpath", "-o", cfg.Distribution.Name}
+	}
 	if cfg.Distribution.BuildTags != "" {
 		args = append(args, "-tags", cfg.Distribution.BuildTags)
 	}
