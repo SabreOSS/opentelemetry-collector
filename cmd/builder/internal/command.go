@@ -40,6 +40,7 @@ const (
 	distributionOutputPathFlag     = "output-path"
 	distributionGoFlag             = "go"
 	distributionModuleFlag         = "module"
+	distributionDebugFlag          = "debug-compilation"
 )
 
 var (
@@ -110,7 +111,7 @@ configuration is provided, ocb will generate a default Collector.
 	if err := cmd.Flags().MarkDeprecated(distributionModuleFlag, "use config distribution::module"); err != nil {
 		return nil, err
 	}
-
+	cmd.Flags().BoolVar(&cfg.Distribution.Debug, distributionDebugFlag, false, "Compile with debug flags (default false)")
 	// version of this binary
 	cmd.AddCommand(versionCommand())
 
@@ -191,5 +192,8 @@ func applyCfgFromFile(flags *flag.FlagSet, cfgFromFile builder.Config) {
 	}
 	if !flags.Changed(distributionModuleFlag) && cfgFromFile.Distribution.Module != "" {
 		cfg.Distribution.Module = cfgFromFile.Distribution.Module
+	}
+	if !flags.Changed(distributionDebugFlag) && cfgFromFile.Distribution.Debug != false {
+		cfg.Distribution.Debug = cfgFromFile.Distribution.Debug
 	}
 }

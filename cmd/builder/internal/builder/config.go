@@ -56,6 +56,7 @@ type Distribution struct {
 	OutputPath     string `mapstructure:"output_path"`
 	Version        string `mapstructure:"version"`
 	BuildTags      string `mapstructure:"build_tags"`
+	Debug          bool   `mapstructure:"debug_compilation"`
 }
 
 // Module represents a receiver, exporter, processor or extension for the distribution
